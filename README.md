@@ -1,5 +1,7 @@
 # Run existing Storybook
 
+Make sure to use Node 18.18.1
+
 ```
 npm install
 npm run storybook
