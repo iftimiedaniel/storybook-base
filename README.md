@@ -1,3 +1,10 @@
+# Run existing Storybook
+
+```
+npm install
+npm run storybook
+```
+
 # Install a new Storybook using Vue3-Vite
 
 Switch to NPM 18.18.1

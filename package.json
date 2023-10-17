@@ -1,0 +1,40 @@
+{
+  "name": "storybook-base",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs --fix --ignore-path .gitignore",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build"
+  },
+  "dependencies": {
+    "@storybook/addon-backgrounds": "^7.4.6",
+    "@storybook/addon-viewport": "^7.4.6",
+    "vue": "^3.3.4"
+  },
+  "devDependencies": {
+    "@storybook/addon-a11y": "^7.4.6",
+    "@storybook/addon-essentials": "^7.4.6",
+    "@storybook/addon-interactions": "^7.4.6",
+    "@storybook/addon-links": "^7.4.6",
+    "@storybook/addon-styling-webpack": "^0.0.5",
+    "@storybook/blocks": "^7.4.6",
+    "@storybook/testing-library": "^0.2.2",
+    "@storybook/vue3": "^7.4.6",
+    "@storybook/vue3-vite": "^7.4.6",
+    "@vitejs/plugin-vue": "^4.3.4",
+    "@whitespace/storybook-addon-html": "^5.1.6",
+    "eslint": "^8.49.0",
+    "eslint-plugin-storybook": "^0.6.15",
+    "eslint-plugin-vue": "^9.17.0",
+    "prettier": "^2.8.8",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "sass": "^1.69.3",
+    "storybook": "^7.4.6",
+    "vite": "^4.4.9"
+  }
+}
