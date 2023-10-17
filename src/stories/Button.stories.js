@@ -19,11 +19,8 @@ export default {
   parameters: {
     design: {
       type: 'figma',
-      url: 'https://www.figma.com/file/95muyKBxIbumE6c819vwHK/Core-Components?type=design&node-id=606%3A2&mode=design&t=2RyHf53jzl6GDK4z-1',
+      url: 'https://www.figma.com/file/95muyKBxIbumE6c819vwHK/Core-Components?type=design&node-id=909%3A457&mode=dev',
     },
-    css: {
-      type: 'code'
-    }
   },
 };
 
