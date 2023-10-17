@@ -16,6 +16,15 @@ export default {
       options: ['small', 'medium', 'large'],
     },
   },
+  parameters: {
+    design: {
+      type: 'figma',
+      url: 'https://www.figma.com/file/95muyKBxIbumE6c819vwHK/Core-Components?type=design&node-id=606%3A2&mode=design&t=2RyHf53jzl6GDK4z-1',
+    },
+    css: {
+      type: 'code'
+    }
+  },
 };
 
 // More on writing stories with args: https://storybook.js.org/docs/vue/writing-stories/args

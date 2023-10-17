@@ -8,7 +8,8 @@ const config = {
     "@storybook/addon-a11y",
     "@storybook/addon-viewport",
     "@storybook/addon-backgrounds",
-    "@storybook/addon-styling-webpack"
+    "@storybook/addon-styling-webpack",
+    "@storybook/addon-designs"
   ],
   framework: {
     name: "@storybook/vue3-vite",

@@ -2,6 +2,13 @@ import { INITIAL_VIEWPORTS } from '@storybook/addon-viewport';
 
 const preview = {
   parameters: {
+    options: {
+      storySort: {
+        method: "alphabetical",
+        includeNames: true,
+        order: ["*"]
+      }
+    },
     actions: { argTypesRegex: "^on[A-Z].*" },
     controls: {
       matchers: {
