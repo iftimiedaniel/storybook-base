@@ -4,6 +4,7 @@ import ButtonScss from './button.scss?inline';
 export default {
   title: 'Example/Button',
   component: Button,
+  tags: ['autodocs'],
   argTypes: {
     backgroundColor: {
       control: 'color',
@@ -38,26 +39,26 @@ export default {
 export const Primary = {
   args: {
     primary: true,
-    label: 'Button',
+    label: 'Buy Now',
   },
 };
 
 export const Secondary = {
   args: {
-    label: 'Button',
+    label: 'Buy Now',
   },
 };
 
 export const Large = {
   args: {
     size: 'large',
-    label: 'Button',
+    label: 'Buy Now',
   },
 };
 
 export const Small = {
   args: {
     size: 'small',
-    label: 'Button',
+    label: 'Buy Now',
   },
 };

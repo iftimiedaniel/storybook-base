@@ -2,14 +2,15 @@
   font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-weight: 700;
   border: 0;
-  border-radius: 3em;
+  border-radius: var(--border-radius-radius-xs, 4px);
   cursor: pointer;
   display: inline-block;
   line-height: 1;
-  
+  text-transform: uppercase;
+
 	&--primary {
 	  color: white;
-	  background-color: var(--color-brands-fjr-primary-brand-color);
+	  background-color: var(--color-interface-button-primary-button-color, #303030);;
 	}
 	&--secondary {
 	  color: #333;
@@ -22,7 +23,7 @@
 	}
 	&--medium {
 	  font-size: 14px;
-	  padding: 11px 20px;
+	  padding: var(--space-padding-sm) var(--space-padding-xxl);
 	}
 	&--large {
 	  font-size: 16px;

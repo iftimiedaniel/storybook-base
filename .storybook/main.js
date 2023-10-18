@@ -11,6 +11,7 @@ const config = {
     "@storybook/addon-styling-webpack",
     "@storybook/addon-designs",
     "storybook-code-panel",
+    "@bissolli/storybook-css-properties"
   ],
   framework: {
     name: "@storybook/vue3-vite",
