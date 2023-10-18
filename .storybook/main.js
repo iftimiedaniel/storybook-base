@@ -9,7 +9,8 @@ const config = {
     "@storybook/addon-viewport",
     "@storybook/addon-backgrounds",
     "@storybook/addon-styling-webpack",
-    "@storybook/addon-designs"
+    "@storybook/addon-designs",
+    "storybook-code-panel",
   ],
   framework: {
     name: "@storybook/vue3-vite",

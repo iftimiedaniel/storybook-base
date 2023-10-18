@@ -1,4 +1,5 @@
 import { INITIAL_VIEWPORTS } from '@storybook/addon-viewport';
+import '../src/assets/FJR-Tokens.css';
 
 const preview = {
   parameters: {
@@ -48,6 +49,10 @@ const preview = {
     viewport: {
       viewports: INITIAL_VIEWPORTS,
     },
+    storybookCodePanel:{
+      disabled: true,
+      allowedExtensions: ["js", "jsx", "ts", "tsx", "css", "sass", "scss"]
+    }
   },
 };
 
