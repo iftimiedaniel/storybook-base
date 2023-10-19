@@ -1,12 +1,14 @@
 import { Meta } from "@storybook/blocks";
 import cssString from "../assets/FJR-Tokens.css?inline";
 import { parseCSSVariables, filterCategories } from "../assets/parseColors.js";
+import { linkTo } from '@storybook/addon-links';
 
 <Meta title="Design Tokens/Border Radius" />
 
 # Border Radius
 
 Below is the list of CSS variables for `border-radius` using increments of 0.25.
+These are defined based on [Base spacing rules](?path=/docs/design-tokens-spacing--docs#base-spacing-rules)
 
 {borderRadius()}
 
