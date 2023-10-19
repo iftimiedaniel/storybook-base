@@ -4,14 +4,12 @@ const config = {
     "@storybook/addon-links",
     "@storybook/addon-essentials",
     "@storybook/addon-interactions",
-	  "@whitespace/storybook-addon-html",
+    "@whitespace/storybook-addon-html",
     "@storybook/addon-a11y",
     "@storybook/addon-viewport",
     "@storybook/addon-backgrounds",
     "@storybook/addon-styling-webpack",
     "@storybook/addon-designs",
-    "storybook-code-panel",
-    "@bissolli/storybook-css-properties"
   ],
   framework: {
     name: "@storybook/vue3-vite",

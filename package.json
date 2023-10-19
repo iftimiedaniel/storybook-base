@@ -13,7 +13,6 @@
   "dependencies": {
     "@storybook/addon-backgrounds": "^7.4.6",
     "@storybook/addon-viewport": "^7.4.6",
-    "storybook-code-panel": "^0.2.1",
     "vue": "^3.3.4"
   },
   "devDependencies": {

@@ -1,0 +1,46 @@
+import { Meta, ColorPalette, ColorItem } from "@storybook/blocks";
+import cssString from "../assets/FJR-Tokens.css?inline";
+import { parseCSSVariables, groupTokensByCategory, capitalizeFirstLetter, filterCategories } from "../assets/parseColors.js";
+
+<Meta title="Design-Tokens/Colors" />
+ 
+ # Colors
+
+{colors()}
+
+export function colors() {
+    const colorTokens = parseCSSVariables(cssString);
+    const filteredColorTokens = filterCategories(colorTokens, ["color"]);
+    const categories = groupTokensByCategory(filteredColorTokens);
+
+    return (
+    <ColorPalette>
+      {Object.keys(categories).map((categoryName) => {
+        const categoryTokens = categories[categoryName];
+        const tokenNames = Object.keys(categoryTokens);
+        const colorItems = [];
+        const maxColorsPerItem = tokenNames.length > 5 ? 4 : tokenNames.length;
+
+        for (let i = 0; i < tokenNames.length; i += maxColorsPerItem) {
+          const chunk = tokenNames.slice(i, i + maxColorsPerItem);
+          const colorItemTitle = i > 1 ? null : capitalizeFirstLetter(categoryName);
+
+          const colors = chunk.reduce((acc, tokenName) => {
+            acc[`--${tokenName}`] = categoryTokens[tokenName];
+            return acc;
+          }, {});
+
+          colorItems.push(
+            <ColorItem
+              key={colorItemTitle}
+              title={colorItemTitle}
+              colors={colors}
+            />
+          );
+        }
+
+        return colorItems;
+      })}
+    </ColorPalette>
+  )
+}

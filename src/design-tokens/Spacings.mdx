@@ -1,0 +1,104 @@
+import { Meta } from "@storybook/blocks";
+import cssString from "../assets/FJR-Tokens.css?inline";
+import { parseCSSVariables, filterCategories } from "../assets/parseColors.js";
+
+<Meta title="Design-Tokens/Spacings" />
+
+# Spacings
+
+List of spacings using increments of 0.25.
+Everything's measured in `rems` where `1rem = 16px`.
+
+### Base spacing rules
+{pts()}
+
+### Global spacing rules
+{spaces()}
+
+export function pts() {
+    const colorTokens = parseCSSVariables(cssString);
+    const categoriesToInclude = ["8"];
+    const tokensToExclude = ["8-pt-numbers-full"];
+    const filteredColorTokens = filterCategories(colorTokens, categoriesToInclude, tokensToExclude);
+
+  return (
+    <table>
+      <thead>
+        <tr>
+          <th width="25%">Variable</th>
+          <th>Value</th>
+          <th width="20%">Preview</th>
+        </tr>
+      </thead>
+      <tbody>
+        {Object.keys(filteredColorTokens).map((tokenName) => (
+            <tr key={tokenName}>
+              <td align="center">--{tokenName}</td>
+              <td align="center">{filteredColorTokens[tokenName]}</td>
+              <td align="center">
+                <div className='sb-addon' style={{ height: filteredColorTokens[tokenName] }}></div>
+            </td>
+            </tr>
+          ))}
+      </tbody>
+    </table>
+  );
+}
+
+export function spaces() {
+  const colorTokens = parseCSSVariables(cssString);
+  const spacings = filterCategories(colorTokens, ["space"]);
+
+  return (
+    <table>
+      <thead>
+        <tr>
+          <th width="25%">Variable</th>
+          <th>Value</th>
+          <th width="20%">Preview</th>
+        </tr>
+      </thead>
+      <tbody>
+        {Object.entries(spacings).map(([tokenName, tokenValue]) => (
+          <tr key={tokenName}>
+            <td align="center">--{tokenName}</td>
+            <td align="center">{tokenValue}</td>
+            <td align="center">
+                <div className='sb-addon' style={{ height: tokenValue }}></div>
+            </td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+  );
+}
+
+<style>
+  {`
+  table {
+    width: 100%;
+  }
+
+  .sb-addon {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    position: relative;
+    background-color: #EEF3F8;
+    border: 1px dashed rgba(0, 0, 0, 0.25);
+    background: #EEF3F8;
+    height: 180px;
+    margin-bottom: 48px;
+    overflow: hidden;
+  }
+
+  @media screen and (max-width: 600px) {
+    .sb-addon {
+      height: 280px;
+      align-items: flex-start;
+      padding-top: 32px;
+      overflow: hidden;
+    }
+  }
+  `}
+</style>
