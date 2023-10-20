@@ -1,5 +1,7 @@
 import Button from './Button.vue';
 // More on how to set up stories at: https://storybook.js.org/docs/vue/writing-stories/introduction
+const LabelText = 'Buy Now';
+
 export default {
   title: 'Components/Button',
   component: Button,
@@ -28,26 +30,26 @@ export default {
 export const Primary = {
   args: {
     primary: true,
-    label: 'Buy Now',
+    label: LabelText,
   },
 };
 
 export const Secondary = {
   args: {
-    label: 'Buy Now',
+    label: LabelText,
   },
 };
 
 export const Large = {
   args: {
     size: 'large',
-    label: 'Buy Now',
+    label: LabelText,
   },
 };
 
 export const Small = {
   args: {
     size: 'small',
-    label: 'Buy Now',
+    label: LabelText,
   },
 };
