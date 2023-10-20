@@ -20,8 +20,10 @@ export default {
   },
   parameters: {
     design: {
-      type: 'figma',
+      type: 'figma ',
       url: 'https://www.figma.com/file/95muyKBxIbumE6c819vwHK/Core-Components?type=design&node-id=909%3A457&mode=dev',
+      accessToken: import.meta.env.STORYBOOK_FIGMA_ACCESS_TOKEN
+
     },
   },
 };
