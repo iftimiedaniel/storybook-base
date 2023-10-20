@@ -1,10 +1,12 @@
-name: Chromatic
+# .github/workflows/chromatic.yml
 
-on:
-  push:
-    branches:
-      - main
+# Workflow name
+name: "Chromatic"
 
+# Event for the workflow
+on: push
+
+# List of jobs
 jobs:
   chromatic:
     runs-on: ubuntu-latest
