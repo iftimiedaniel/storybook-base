@@ -44,6 +44,7 @@ export const Large = {
   args: {
     size: 'large',
     label: LabelText,
+    primary: true,
   },
 };
 
@@ -51,5 +52,6 @@ export const Small = {
   args: {
     size: 'small',
     label: LabelText,
+    primary: true,
   },
 };

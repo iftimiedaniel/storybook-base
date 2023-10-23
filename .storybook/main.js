@@ -13,6 +13,7 @@ const config = {
     "@storybook/addon-backgrounds",
     "@storybook/addon-styling-webpack",
     "@storybook/addon-designs",
+    "@storybook/addon-themes"
   ],
   framework: {
     name: "@storybook/vue3-vite",

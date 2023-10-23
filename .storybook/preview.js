@@ -1,5 +1,20 @@
 import { INITIAL_VIEWPORTS } from '@storybook/addon-viewport';
+import { withThemeByDataAttribute } from '@storybook/addon-themes';
 import '../src/assets/FJR-Tokens.css';
+import '../src/assets/RR-Tokens.css';
+
+export const decorators = [
+  withThemeByDataAttribute({
+    themes: {
+      Fjallraven: 'Mode 1',
+      RoyalRobbins: 'Mode 2',
+      Hanwag: 'Mode 3',
+      Tierra: 'Mode 4',
+    },
+    defaultTheme: 'Fjallraven',
+    attributeName: 'data-theme',
+  }),
+];
 
 const preview = {
   parameters: {
