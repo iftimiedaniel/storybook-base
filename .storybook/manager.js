@@ -6,7 +6,7 @@ addons.setConfig({
         base: "dark", 
         brandTitle: "Fenix Outdoor Design System",
         brandUrl: "https://www.fenixoutdoor.com/",
-        brandImage: "/src/assets/FenixOutdoorWhite.svg",
+        brandImage: "/FenixOutdoorWhite.svg",
         brandTarget: "_blank",
     }),
 })
