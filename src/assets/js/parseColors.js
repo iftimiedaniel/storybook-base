@@ -39,7 +39,6 @@ function filterCategories(colorTokens, categoriesToInclude, tokensToExclude) {
 
   for (const tokenName in colorTokens) {
     const category = tokenName.split("-")[0]; // Extract the category name
-console.log(tokenName)
     if (categoriesToInclude.includes(category) && (!tokensToExclude || !tokensToExclude.includes(tokenName))) {
       filteredTokens[tokenName] = colorTokens[tokenName];
     }

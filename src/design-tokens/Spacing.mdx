@@ -1,6 +1,7 @@
 import { Meta } from "@storybook/blocks";
-import cssString from "../assets/FJR-Tokens.css?inline";
-import { parseCSSVariables, filterCategories } from "../assets/parseColors.js";
+import { parseCSSVariables, filterCategories } from "/src/assets/js/parseColors.js";
+import cssString from "/src/assets/css/BASE-tokens.css?inline";
+import cssSpacesString from "/src/assets/css/FJR-Tokens.css?inline";
 
 <Meta title="Design Tokens/Spacing" />
 
@@ -16,7 +17,7 @@ Everything's measured in `rems` where `1rem = 16px`.
 {spaces()}
 
 export function pts() {
-    const colorTokens = parseCSSVariables(cssString);
+    const colorTokens = parseCSSVariables(cssSpacesString);
     const categoriesToInclude = ["8"];
     const tokensToExclude = ["8-pt-numbers-full"];
     const filteredColorTokens = filterCategories(colorTokens, categoriesToInclude, tokensToExclude);

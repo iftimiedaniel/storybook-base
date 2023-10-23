@@ -1,9 +1,10 @@
 import { Meta, ColorPalette, ColorItem } from "@storybook/blocks";
-import cssString from "../assets/FJR-Tokens.css?inline";
-import { parseCSSVariables, groupTokensByCategory, capitalizeFirstLetter, filterCategories } from "../assets/parseColors.js";
+import { parseCSSVariables, groupTokensByCategory, capitalizeFirstLetter, filterCategories } from "/src/assets/js/parseColors";
+import cssString from "/src/assets/css/BASE-tokens.css?inline";
+import '/src/assets/js/themeSwitcher';
 
 <Meta title="Design Tokens/Colors" />
- 
+
  # Colors
 
 Below is the list of CSS variables grouped by color category. Each CSS variable is followed by a `HEX` code (e.g. `#333333`).
@@ -26,7 +27,6 @@ export function colors() {
         for (let i = 0; i < tokenNames.length; i += maxColorsPerItem) {
           const chunk = tokenNames.slice(i, i + maxColorsPerItem);
           const colorItemTitle = i > 1 ? null : capitalizeFirstLetter(categoryName);
-
           const colors = chunk.reduce((acc, tokenName) => {
             acc[`--${tokenName}`] = categoryTokens[tokenName];
             return acc;
@@ -34,7 +34,7 @@ export function colors() {
 
           colorItems.push(
             <ColorItem
-              key={colorItemTitle}
+              key={i}
               title={colorItemTitle}
               colors={colors}
             />

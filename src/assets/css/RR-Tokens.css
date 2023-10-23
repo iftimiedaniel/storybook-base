@@ -1,0 +1,51 @@
+[data-theme="RR"] {
+  /* colors */
+  --color-accents-blue: #235f83;
+  --color-accents-green: #73ac3a;
+  --color-accents-light-blue: #69b7e2;
+  --color-accents-red: #e58586;
+  --color-accents-red-light: #fae8e8;
+  --color-accents-yellow: #eda64d;
+  --color-brands-primary-brand-color: #50776C;
+  --color-brands-primary-brand-darker-color: #50776C;
+  --color-brands-primary-brand-lighter-color: #e48881;
+  --color-brands-secondary-brand-color: #50776C;
+  --color-brands-secondary-brand-darker: #5b694a;
+  --color-brands-secondary-brand-lighter: #b4c0a5;
+  --color-grays-gray100: #f4f4f4;
+  --color-grays-gray200: #ebebeb;
+  --color-grays-gray300: #cccccc;
+  --color-grays-gray400: #999999;
+  --color-grays-gray50: #f6f6f8;
+  --color-grays-gray500: #303030;
+  --color-grays-gray600: #262626;
+  --color-neutral-black: #000000;
+  --color-neutral-white: #ffffff;
+  --color-product-colors-brick-red: #b24e76;
+  --color-product-colors-dirty-purple: #bdb4c9;
+  --color-product-colors-gray: #5f6667;
+  --color-product-colors-navy-blue: #4e797a;
+  --color-product-colors-navy-green: #445545;
+  --color-product-colors-pink: #d97c88;
+  --color-product-colors-yellow: #ecc141;
+  /* numbers */
+  --8-pt-numbers-0: 0rem;
+  --8-pt-numbers-1: 0.25rem;
+  --8-pt-numbers-2: 0.5rem;
+  --8-pt-numbers-3: 0.75rem;
+  --8-pt-numbers-4: 1rem;
+  --8-pt-numbers-5: 1.25rem;
+  --8-pt-numbers-6: 1.5rem;
+  --8-pt-numbers-7: 2rem;
+  --8-pt-numbers-8: 2.25rem;
+  --8-pt-numbers-9: 2.5rem;
+  --8-pt-numbers-10: 2.75rem;
+  --8-pt-numbers-11: 3rem;
+  --8-pt-numbers-12: 3.25rem;
+  --8-pt-numbers-13: 3.5rem;
+  --8-pt-numbers-14: 4rem;
+  --8-pt-numbers-15: 4.25rem;
+  --8-pt-numbers-16: 4.5rem;
+  --8-pt-numbers-17: 5rem;
+  --8-pt-numbers-full: 125rem;
+}
