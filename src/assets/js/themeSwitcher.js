@@ -26,11 +26,11 @@ function findGetParameter(parameterName) {
 }
 
 function switchTheme() {
-  const requestTheme = findGetParameter("globals");
-  if (requestTheme === null)
+  const getGlobals = findGetParameter("globals");
+  if (getGlobals === null)
     return;
 
-  const themeName = requestTheme.split(":")[1];
+  const themeName = getGlobals.split("theme:")[1];
 
   if (document.documentElement.dataset.theme === themeConfig.themes[themeName])
     return;
