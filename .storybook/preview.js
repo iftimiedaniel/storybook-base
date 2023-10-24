@@ -1,5 +1,6 @@
 import { INITIAL_VIEWPORTS } from '@storybook/addon-viewport';
 import { withThemeByDataAttribute } from '@storybook/addon-themes';
+
 import '../src/assets/css/BASE-tokens.css';
 import '../src/assets/css/FJR-Tokens.css';
 import '../src/assets/css/RR-Tokens.css';
@@ -24,11 +25,13 @@ export const decorators = [
 const preview = {
   parameters: {
     options: {
-      // storySort: {
-      //   method: "alphabetical",
-      //   includeNames: true,
-      //   order: ["*"]
-      // }
+       storySort: {
+         order: [
+          'Design Tokens',
+          ['Colors', '*'],
+          '*'
+        ]
+       }
     },
     actions: { argTypesRegex: "^on[A-Z].*" },
     controls: {

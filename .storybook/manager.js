@@ -9,4 +9,7 @@ addons.setConfig({
         brandImage: "/FenixOutdoorWhite.svg",
         brandTarget: "_blank",
     }),
+    sidebar: {
+        showRoots: false
+    }
 })
