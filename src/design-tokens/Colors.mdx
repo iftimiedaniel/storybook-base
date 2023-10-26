@@ -1,6 +1,6 @@
 import { Meta } from "@storybook/blocks";
 import '/src/assets/js/themeSwitcher';
-import { parseCSSVariables, groupTokensByCategory, capitalizeFirstLetter, filterCategories } from "/src/assets/js/parseColors";
+import { parseCSSVariables, groupTokensByCategory, capitalizeFirstLetter, filterCategories } from "/src/assets/js/parseTokens";
 import cssVars from "/src/assets/css/globalTokens.css?inline";
 import "/src/assets/css/docs.scss";
 
@@ -25,7 +25,6 @@ export function colors() {
     Object.keys(categories).map((categoryName, index) => {
       const categoryTokens = categories[categoryName];
       const tokenNames = Object.keys(categoryTokens);
-      const maxColorsPerItem = tokenNames.length > 5 ? 4 : tokenNames.length;
 
       return (
         <div key={categoryName}>
