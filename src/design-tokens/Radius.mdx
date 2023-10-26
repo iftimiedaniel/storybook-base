@@ -1,18 +1,19 @@
 import { Meta } from "@storybook/blocks";
 import { TokenTable } from "/src/assets/js/tokenTable";
-import '/src/assets/js/themeSwitcher';
+import "/src/assets/js/themeSwitcher";
 
 <Meta title="Design Tokens/Border Radius" />
 
 # Border Radius
 
-Below is the list of **CSS variables** for `border-radius` using increments of 0.25.
-Base color variables can be found [here](?path=/docs/design-tokens-global--docs#spacing).
+Below is the list of **CSS variables** for `border-radius`.
+Global variables can be found [here](?path=/docs/design-tokens-global--docs#spacing).
 
 <TokenTable
   categoriesToInclude={["border"]}
   previewStyle={(borderRadius) => ({ borderRadius })}
   previewExtraClass={"design-token-card__preview--highlighted"}
+  isGlobal={true}
 />
 
 [How to use CSS variables](?path=/docs/design-tokens-global--docs#how-to-use-css-variables)

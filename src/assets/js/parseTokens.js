@@ -1,31 +1,24 @@
 /* eslint-disable no-unused-vars */
 function parseCSSVariables(cssString) {
-  const colorTokens = {}
-  const cssVariableRegex = /--([\w-]+):\s*(.*?);/g
-
-  let match
-
+  const colorTokens = {};
+  const cssVariableRegex = /--([\w-]+):\s*(.*?);/g;
+  let match;
   while ((match = cssVariableRegex.exec(cssString)) !== null) {
-    const [fullMatch, tokenName, tokenValue] = match
-    colorTokens[tokenName] = tokenValue.trim()
+    const [fullMatch, tokenName, tokenValue] = match;
+    colorTokens[tokenName] = tokenValue.trim();
   }
-
   return colorTokens;
 }
 
 function groupTokensByCategory(colorTokens) {
   const categories = {};
-  const excludedCategories = ["pt", "radius", "padding"];
-
   for (const tokenName in colorTokens) {
     const category = tokenName.split("-")[1];
 
-    if (!excludedCategories.includes(category)) {
-      if (!categories[category]) {
-        categories[category] = {};
-      }
-      categories[category][tokenName] = colorTokens[tokenName];
+    if (!categories[category]) {
+      categories[category] = {};
     }
+    categories[category][tokenName] = colorTokens[tokenName];
   }
   return categories;
 }
@@ -36,14 +29,12 @@ function capitalizeFirstLetter(string) {
 
 function filterCategories(colorTokens, categoriesToInclude, tokensToExclude) {
   const filteredTokens = {};
-
   for (const tokenName in colorTokens) {
-    const category = tokenName.split("-")[0]; // Extract the category name
+    const category = tokenName.split("-")[0];
     if (categoriesToInclude.includes(category) && (!tokensToExclude || !tokensToExclude.includes(tokenName))) {
       filteredTokens[tokenName] = colorTokens[tokenName];
     }
   }
-
   return filteredTokens;
 }
 

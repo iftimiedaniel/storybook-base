@@ -1,61 +1,17 @@
 import { Meta } from "@storybook/blocks";
+import { TokenColorTable } from "/src/assets/js/tokenTable";
 import '/src/assets/js/themeSwitcher';
-import { parseCSSVariables, groupTokensByCategory, capitalizeFirstLetter, filterCategories } from "/src/assets/js/parseTokens";
-import cssVars from "/src/assets/css/globalTokens.css?inline";
-import "/src/assets/css/docs.scss";
 
 <Meta title="Design Tokens/Colors" />
 
  # Colors
 
 Below is the list of **CSS Variables** and their values grouped by category. 
-Base color variables can be found [here](?path=/docs/design-tokens-global--docs#colors).
+Global color variables can be found [here](?path=/docs/design-tokens-global--docs#colors).
 
-{colors()}
+<TokenColorTable
+  categoriesToInclude={["color"]}
+  isGlobal={true}
+/>
 
 [How to use CSS variables](?path=/docs/design-tokens-global--docs#how-to-use-css-variables)
-
-export function colors() {
-    const colorTokens = parseCSSVariables(cssVars);
-    const categoriesToInclude = ["color"];
-    const filteredColorTokens = filterCategories(colorTokens, categoriesToInclude);
-    const categories = groupTokensByCategory(filteredColorTokens);
-
-  return (
-    Object.keys(categories).map((categoryName, index) => {
-      const categoryTokens = categories[categoryName];
-      const tokenNames = Object.keys(categoryTokens);
-
-      return (
-        <div key={categoryName}>
-          <h4>{capitalizeFirstLetter(categoryName)}</h4>
-          <div className="design-token-card">
-            <table>
-              <thead>
-                <tr>
-                  <th align="left" width="60%">Variable Name</th>
-                  <th align="left">Value</th>
-                  <th width="1%">Preview</th>
-                </tr>
-              </thead>
-              <tbody>
-                {tokenNames.map((tokenName, tokenIndex) => {
-                  const color = categoryTokens[tokenName];
-                  return (
-                    <tr key={tokenName}>
-                      <td align="left"><pre>{tokenName}</pre></td>
-                      <td align="left"><input type="text" readOnly value={color} /></td>
-                      <td align="center">
-                        <div className='design-token-card__preview' style={{ backgroundColor: color }}></div>
-                      </td>
-                    </tr>
-                  );
-                })}
-              </tbody>
-            </table>
-          </div>
-        </div>
-      );
-    })
-  );
-}
