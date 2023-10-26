@@ -1,0 +1,179 @@
+import { Meta, Source } from "@storybook/blocks";
+import '/src/assets/js/themeSwitcher';
+import { findGetParameter } from '/src/assets/js/themeSwitcher';
+import { parseCSSVariables, groupTokensByCategory, capitalizeFirstLetter, filterCategories } from "/src/assets/js/parseColors";
+import cssFJR from "/src/assets/css/FJR-tokens.css?inline";
+import cssRR from "/src/assets/css/RR-tokens.css?inline";
+
+import "/src/assets/css/docs.scss";
+
+<Meta title="Design Tokens/Global" />
+
+# Global CSS Variables 
+
+### How to use CSS Variables
+
+The `var()` function is used to insert the value of a **CSS variable**.
+The syntax of the `var()` function is as follows:
+
+`var(--name, value)`
+
+<div className="design-token-card">
+  <table width="100%">
+    <thead>
+      <tr>
+        <th align="left">Value</th>
+        <th align="left">Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><em>name</em></td>
+        <td>Required. The variable name (must start with two dashes)</td>
+      </tr>
+      <tr>
+        <td><em>value</em></td>
+        <td>Optional. The fallback value (used if the variable is not found)</td>
+      </tr>
+    </tbody>
+    <tfoot>
+      <tr>
+        <td colspan="2">
+          <small>**Note**: The variable name must begin with two dashes (`--`) and it is case sensitive!</small>
+        </td>
+      </tr>
+    </tfoot>
+  </table>
+</div>
+
+### Examples
+They can be used inside stylesheets or inline.
+
+<Source 
+    dark="true"
+    type="code" 
+    language="css" 
+    code={`.myClassName { 
+    width: var(--8-pt-numbers-7); 
+    height: var(--8-pt-numbers-7); 
+    background-color: var(--color-brands-primary-brand-color);
+}`} />
+
+<Source 
+    dark="true"
+    type="code" 
+    language="html" 
+    code={`<div style="width: var(--8-pt-numbers-7); 
+    height: var(--8-pt-numbers-7); 
+    background-color: var(--color-brands-primary-brand-color)">
+</div>`} />
+
+### Colors
+{colors()}
+
+### Spacing
+Using increments of 0.25.
+Everything's measured in `rems` where `1rem = 16px`.
+{spacing()}
+
+export function spacing() {
+    let colorTokens = parseCSSVariables(cssFJR);
+    const getGlobals = findGetParameter("globals");
+
+    if(getGlobals !== null){
+      const themeName = getGlobals.split("theme:")[1];
+
+      if (themeName === "RoyalRobbins") {
+        colorTokens = parseCSSVariables(cssRR);
+      } 
+    }
+    
+    const categoriesToInclude = ["8"];
+    const tokensToExclude = ["8-pt-numbers-full"];
+    const filteredColorTokens = filterCategories(colorTokens, categoriesToInclude);
+
+  return (
+    <div className="design-token-card">
+      <table>
+        <thead>
+          <tr>
+            <th align="left" width="60%">Variable Name</th>
+            <th align="left">Value</th>
+            <th width="1%">Preview</th>
+          </tr>
+        </thead>
+        <tbody>
+          {Object.keys(filteredColorTokens).map((tokenName) => (
+              <tr key={tokenName}>
+                <td align="left"><pre>--{tokenName}</pre></td>
+                <td align="left">{filteredColorTokens[tokenName]}</td>
+                <td align="center">
+                  {tokenName !== '8-pt-numbers-full' ? 
+                    (<div className='design-token-card__preview design-token-card__preview--empty' style={{ height: filteredColorTokens[tokenName] }}></div>)
+                    : 
+                    (<div className='design-token-card__info'>Used for circles</div>)
+                  }                  
+              </td>
+              </tr>
+            ))}
+        </tbody>
+      </table>
+    </div>
+  );
+}
+
+export function colors() {
+    let colorTokens = parseCSSVariables(cssFJR);
+    const getGlobals = findGetParameter("globals");
+
+    if(getGlobals !== null){
+      const themeName = getGlobals.split("theme:")[1];
+
+      if (themeName === "RoyalRobbins") {
+        colorTokens = parseCSSVariables(cssRR);
+      } 
+    }
+    
+    const categoriesToInclude = ["color"];
+    const filteredColorTokens = filterCategories(colorTokens, categoriesToInclude);
+    const categories = groupTokensByCategory(filteredColorTokens);
+
+  return (
+    Object.keys(categories).map((categoryName, index) => {
+      const categoryTokens = categories[categoryName];
+      const tokenNames = Object.keys(categoryTokens);
+      const maxColorsPerItem = tokenNames.length > 5 ? 4 : tokenNames.length;
+
+      return (
+        <div key={categoryName}>
+          <h4>{capitalizeFirstLetter(categoryName)}</h4>
+          <div className="design-token-card">
+            <table>
+              <thead>
+                <tr>
+                  <th align="left" width="60%">Variable Name</th>
+                  <th align="left">Value</th>
+                  <th width="1%">Preview</th>
+                </tr>
+              </thead>
+              <tbody>
+                {tokenNames.map((tokenName, tokenIndex) => {
+                  const color = categoryTokens[tokenName];
+                  return (
+                    <tr key={tokenName}>
+                      <td align="left"><pre>--{tokenName}</pre></td>
+                      <td align="left"><input type="text" readOnly value={color} /></td>
+                      <td align="center">
+                        <div className='design-token-card__preview' style={{ backgroundColor: color }}></div>
+                      </td>
+                    </tr>
+                  );
+                })}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      );
+    })
+  );
+}

@@ -39,3 +39,5 @@ function switchTheme() {
 }
 
 themeSwitcher()
+
+export { findGetParameter }

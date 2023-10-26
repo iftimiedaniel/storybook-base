@@ -1,74 +1,62 @@
 import { Meta, ColorPalette, ColorItem } from "@storybook/blocks";
-import { parseCSSVariables, groupTokensByCategory, capitalizeFirstLetter, filterCategories } from "/src/assets/js/parseColors";
-import cssString from "/src/assets/css/BASE-tokens.css?inline";
 import '/src/assets/js/themeSwitcher';
+import { parseCSSVariables, groupTokensByCategory, capitalizeFirstLetter, filterCategories } from "/src/assets/js/parseColors";
+import cssVars from "/src/assets/css/BASE-tokens.css?inline";
 import "/src/assets/css/docs.scss";
 
 <Meta title="Design Tokens/Colors" />
 
  # Colors
 
-Below is the list of CSS variables grouped by color category. Each CSS variable is followed by a `HEX` code (e.g. `#333333`).
+Below is the list of **CSS Variables** and their values grouped by category. 
+Base color variables can be found [here](?path=/docs/design-tokens-global--docs#colors).
 
 {colors()}
 
+[How to use CSS variables](?path=/docs/design-tokens-global--docs#how-to-use-css-variables)
+
 export function colors() {
-    const colorTokens = parseCSSVariables(cssString);
+    const colorTokens = parseCSSVariables(cssVars);
     const categoriesToInclude = ["color"];
     const filteredColorTokens = filterCategories(colorTokens, categoriesToInclude);
     const categories = groupTokensByCategory(filteredColorTokens);
 
   return (
-    <div class="design-token-card">
-      <table>
-        <thead>
-          <tr>
-            <th align="left" width="60%">Variable Name</th>
-            <th align="left">Value</th>
-            <th width="1%">Preview</th>
-          </tr>
-        </thead>
-        <tbody>
-          {Object.keys(categories).map((categoryName) => {
-            const categoryTokens = categories[categoryName];
-            const tokenNames = Object.keys(categoryTokens);
-            const colorItems = [];
-            const maxColorsPerItem = tokenNames.length > 5 ? 4 : tokenNames.length;
+    Object.keys(categories).map((categoryName, index) => {
+      const categoryTokens = categories[categoryName];
+      const tokenNames = Object.keys(categoryTokens);
+      const maxColorsPerItem = tokenNames.length > 5 ? 4 : tokenNames.length;
 
-            for (let i = 0; i < tokenNames.length; i += maxColorsPerItem) {
-              const chunk = tokenNames.slice(i, i + maxColorsPerItem);
-              const colorItemTitle = i > 1 ? null : capitalizeFirstLetter(categoryName);
-              const colors = chunk.reduce((acc, tokenName) => {
-                acc[`--${tokenName}`] = categoryTokens[tokenName];
-                return acc;
-              }, {});
-
-              if(i <= 1){
-                colorItems.push(
-                  <tr key={i}>
-                    <td align="left" colspan="3"><em><strong>{colorItemTitle}</strong></em></td>
-                  </tr>
-                );
-              }
-
-              for (const color in colors) {
-                var j = Object.keys(colors).indexOf(color) * 99;
-                colorItems.push(
-                  <tr key={j}>
-                    <td align="left"><pre>{color}</pre></td>
-                    <td align="left"><input type="text" readonly value={colors[color]} /></td>
-                    <td align="center">
-                      <div className='design-token-card__preview' style={{ backgroundColor: colors[color] }}></div>
-                    </td>
-                  </tr>
+      return (
+        <div key={categoryName}>
+          <h4>{capitalizeFirstLetter(categoryName)}</h4>
+          <div className="design-token-card">
+            <table>
+              <thead>
+                <tr>
+                  <th align="left" width="60%">Variable Name</th>
+                  <th align="left">Value</th>
+                  <th width="1%">Preview</th>
+                </tr>
+              </thead>
+              <tbody>
+                {tokenNames.map((tokenName, tokenIndex) => {
+                  const color = categoryTokens[tokenName];
+                  return (
+                    <tr key={tokenName}>
+                      <td align="left"><pre>{tokenName}</pre></td>
+                      <td align="left"><input type="text" readOnly value={color} /></td>
+                      <td align="center">
+                        <div className='design-token-card__preview' style={{ backgroundColor: color }}></div>
+                      </td>
+                    </tr>
                   );
-              }
-            }
-
-            return colorItems;
-          })}
-        </tbody>
-      </table>
-    </div>
+                })}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      );
+    })
   );
 }

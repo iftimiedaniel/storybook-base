@@ -2,7 +2,7 @@
   box-shadow: rgba(0, 0, 0, 0.10) 0 1px 3px 0;
   border: 1px solid hsla(203, 50%, 30%, 0.15);
   border-radius: 4px;
-  margin: 25px 0 40px;
+  margin: 25px 0 40px !important;
   width: 100%;
   overflow-x: auto;
 
@@ -70,5 +70,11 @@
     &--empty {
       padding-top: 0;
     }
+  }
+
+  &__info {
+    font-size: 12px !important;
+    line-height: 1.4;
+    display: block;
   }
 }

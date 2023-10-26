@@ -28,7 +28,7 @@ const preview = {
        storySort: {
          order: [
           'Design Tokens',
-          ['Colors', '*'],
+          ['Global', 'Colors', '*'],
           '*'
         ]
        }
