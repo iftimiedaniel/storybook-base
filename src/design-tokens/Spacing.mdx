@@ -1,7 +1,7 @@
 import { Meta } from "@storybook/blocks";
 import '/src/assets/js/themeSwitcher';
 import { parseCSSVariables, filterCategories } from "/src/assets/js/parseColors.js";
-import cssString from "/src/assets/css/BASE-tokens.css?inline";
+import cssString from "/src/assets/css/BASE-Tokens.css?inline";
 import "/src/assets/css/docs.scss";
 
 <Meta title="Design Tokens/Spacing" />
@@ -34,7 +34,7 @@ export function spaces() {
               <td align="left"><pre>--{tokenName}</pre></td>
               <td align="left"><input type="text" readOnly value={tokenValue} /></td>
               <td align="center">
-                  <div className='design-token-card__preview design-token-card__preview--empty' style={{ height: tokenValue }}></div>
+                  <div className="design-token-card__preview design-token-card__preview--empty" style={{ height: tokenValue }}></div>
               </td>
             </tr>
           ))}
