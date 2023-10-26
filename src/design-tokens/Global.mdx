@@ -2,8 +2,6 @@ import { Meta, Source } from "@storybook/blocks";
 import { TokenTable, TokenColorTable } from "/src/assets/js/tokenTable";
 import '/src/assets/js/themeSwitcher';
 
-import "/src/assets/css/docs.scss";
-
 <Meta title="Design Tokens/Global" />
 
 # Global CSS Variables 
@@ -15,7 +13,7 @@ The syntax of the `var()` function is as follows:
 
 `var(--name, value)`
 
-<div className="design-token-card">
+<div className="token-table">
   <table width="100%">
     <thead>
       <tr>
@@ -78,7 +76,7 @@ Everything's measured in `rems` where `1rem = 16px`.
 <TokenTable
     categoriesToInclude={["8"]}
     previewStyle={(height) => ({ height })}
-    previewExtraClass={"design-token-card__preview--empty"}
+    previewExtraClass={"token-table__preview--empty"}
     categoryWithInfo={"8-pt-numbers-full"}
     infoText={"Used for circles"}
 />

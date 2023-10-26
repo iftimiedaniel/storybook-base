@@ -1,17 +1,17 @@
 import React from "react";
 import { parseCSSVariables, filterCategories, groupTokensByCategory, capitalizeFirstLetter } from "/src/assets/js/parseTokens";
 import { findGetParameter } from '/src/assets/js/themeSwitcher';
-import globalTokens from "/src/assets/css/globalTokens.css?inline";
-import fjrTokens from "/src/assets/css/fjrTokens.css?inline";
-import rrTokens from "/src/assets/css/rrTokens.css?inline";
-import "/src/assets/css/docs.scss";
+import globalTokens from "/src/assets/css/tokens/globalTokens.css?inline";
+import fjrTokens from "/src/assets/css/tokens/fjrTokens.css?inline";
+import rrTokens from "/src/assets/css/tokens/rrTokens.css?inline";
+import "/src/assets/css/tokenTable.scss";
 
 function TokenTable({ categoriesToInclude, previewStyle, previewExtraClass = null, categoryWithInfo = null, infoText = null, isGlobal = false }) {
   const parsedTokens = getTokens({ isGlobal });
   const filteredTokens = filterCategories(parsedTokens, categoriesToInclude);
 
   return (
-    <div className="design-token-card">
+    <div className="token-table">
       <table>
         <thead>
           <tr>
@@ -27,9 +27,9 @@ function TokenTable({ categoriesToInclude, previewStyle, previewExtraClass = nul
               <td align="left"><input type="text" readOnly value={filteredTokens[tokenName]} /></td>
               <td align="center">
                 {tokenName === categoryWithInfo ?
-                  (<div className='design-token-card__info'>{infoText}</div>)
+                  (<div className='token-table__info'>{infoText}</div>)
                   :
-                  (<div className={`design-token-card__preview ${previewExtraClass}`} style={previewStyle(filteredTokens[tokenName])}></div>)
+                  (<div className={`token-table__preview ${previewExtraClass}`} style={previewStyle(filteredTokens[tokenName])}></div>)
                 }
               </td>
             </tr>
@@ -53,7 +53,7 @@ function TokenColorTable({ categoriesToInclude, isGlobal }) {
       return (
         <div key={categoryName}>
           <h4>{capitalizeFirstLetter(categoryName)}</h4>
-          <div className="design-token-card">
+          <div className="token-table">
             <table>
               <thead>
                 <tr>
@@ -70,7 +70,7 @@ function TokenColorTable({ categoriesToInclude, isGlobal }) {
                       <td align="left"><pre>--{tokenName}</pre></td>
                       <td align="left"><input type="text" readOnly value={color} /></td>
                       <td align="center">
-                        <div className='design-token-card__preview' style={{ backgroundColor: color }}></div>
+                        <div className='token-table__preview' style={{ backgroundColor: color }}></div>
                       </td>
                     </tr>
                   );
