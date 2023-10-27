@@ -1,9 +1,8 @@
 import { INITIAL_VIEWPORTS } from '@storybook/addon-viewport';
 import { withThemeByDataAttribute } from '@storybook/addon-themes';
-
-import '../src/assets/css/tokens/globalTokens.css';
-import '../src/assets/css/tokens/fjrTokens.css';
-import '../src/assets/css/tokens/rrTokens.css';
+import '/src/assets/css/tokens/globalTokens.css';
+import '/src/assets/css/tokens/fjrTokens.css';
+import '/src/assets/css/tokens/rrTokens.css';
 
 export const themeConfig = {
   themes: {

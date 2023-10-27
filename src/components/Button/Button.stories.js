@@ -5,16 +5,35 @@ const LabelText = 'Buy Now';
 export default {
   title: 'Components/Button',
   component: Button,
+  args: {
+    label: LabelText,
+    type: 'primary',
+    rounded: false,
+    withLabel: true,
+    withIcon: true,
+    iconRightAligned: false,
+    state: 'default',
+  },
   argTypes: {
-    backgroundColor: {
-      control: 'color',
-    },
-    onClick: {},
-    size: {
+    type: {
       control: {
         type: 'select',
       },
-      options: ['small', 'medium', 'large'],
+      options: ['primary', 'secondary', 'inverted', 'outline', 'text'],
+      table: {
+        type: { summary: 'string' },
+        defaultValue: { summary: 'primary' },
+      }
+    },
+    state: {
+      control: {
+        type: 'radio',
+      },
+      options: ['default', 'hover', 'disabled'],
+      table: {
+        type: { summary: 'string' },
+        defaultValue: { summary: 'null' },
+      }
     },
   },
   parameters: {
@@ -28,29 +47,35 @@ export default {
 // More on writing stories with args: https://storybook.js.org/docs/vue/writing-stories/args
 export const Primary = {
   args: {
-    primary: true,
-    label: LabelText,
   },
 };
 
 export const Secondary = {
   args: {
-    label: LabelText,
+    type: 'secondary',
   },
 };
 
-export const Large = {
+export const Inverted = {
   args: {
-    size: 'large',
-    label: LabelText,
-    primary: true,
+    type: 'inverted',
   },
 };
 
-export const Small = {
+export const Outline = {
   args: {
-    size: 'small',
-    label: LabelText,
-    primary: true,
+    type: 'outline',
+  },
+};
+
+export const Text = {
+  args: {
+    type: 'text',
+  },
+};
+
+export const IconOnly = {
+  args: {
+    withLabel: false,
   },
 };
