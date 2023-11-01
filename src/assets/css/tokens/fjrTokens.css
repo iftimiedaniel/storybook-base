@@ -49,10 +49,12 @@
   --8-pt-numbers-17: 5rem;
   --8-pt-numbers-full: 125rem;
   /* fonts */
-  --font-brands-primary: Arctic Fox, sans-serif;
+  --font-brands-primary: 'Arctic Fox', sans-serif;
   --font-brands-secondary: var(--font-brands-primary);
-  --font-brands-tertiary: hwt-artz, var(--font-brands-primary);
-  --fontWeights-brands-primary: 400,700,900;
-  --fontWeights-brands-secondary: 400,700,900;
+  --font-brands-tertiary: 'hwt-artz', var(--font-brands-primary);
+  --fontWeights-brands-primary: 400, 700, 900;
+  --fontWeights-brands-secondary: 400, 700, 900;
   --fontWeights-brands-tertiary: 700;
+  /* Keep the below line since it's important for parsing */
+  --null: null;
 }

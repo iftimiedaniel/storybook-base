@@ -1,12 +1,13 @@
 /* eslint-disable no-unused-vars */
 function parseCSSVariables(cssString) {
   const colorTokens = {};
-  const cssVariableRegex = /--([\w-]+):\s*(.*?);/g;
+  const cssVariableRegex = /--([\w-]+):\s*(.*?)(;|$)/g;
   let match;
   while ((match = cssVariableRegex.exec(cssString)) !== null) {
     const [fullMatch, tokenName, tokenValue] = match;
     colorTokens[tokenName] = tokenValue.trim();
   }
+  cssVariableRegex.lastIndex = 0;
   return colorTokens;
 }
 

@@ -1,4 +1,4 @@
-:root{
+:root {
   /* colors */
   --color-background-background-color: var(--color-grays-gray50, #f6f6f8);
   --color-interface-error-color: var(--color-accents-red, #e58586);
@@ -57,4 +57,7 @@
   --font-primary: var(--font-brands-primary, sans-serif);
   --font-secondary: var(--font-brands-secondary, sans-serif);
   --font-tertiary: var(--font-brands-tertiary, sans-serif);
+  /* end of varialbes */
+  /* Keep the below line since it's important for parsing */
+  --null: null;
 }

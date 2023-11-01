@@ -89,7 +89,7 @@ function TokenColorTable({ categoriesToInclude, isGlobal }) {
 function TokenFontTable({ categoriesToInclude, fontWeights = [], isGlobal = false }) {
   const parsedTokens = getTokens({ isGlobal });
   const filteredTokens = filterCategories(parsedTokens, categoriesToInclude);
-  const parsedBrandTokens = getTokens(false);
+  const parsedBrandTokens = getTokens({ isGlobal: false });
   const fontWeightTokens = filterCategories(parsedBrandTokens, ["fontWeights"]);
   let fontBrandWeights = [];
 

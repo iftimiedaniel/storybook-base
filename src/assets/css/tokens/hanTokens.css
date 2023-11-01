@@ -49,10 +49,12 @@
   --8-pt-numbers-17: 5rem;
   --8-pt-numbers-full: 125rem;
   /* fonts */
-  --font-brands-primary: "Knockout", sans-serif;
-  --font-brands-secondary: "Caecilia LT Std", sans-serif;
-  --font-brands-tertiary: "CaeciliaLTStd-Bold", var(--font-brands-secondary);
-  --fontWeights-brands-primary: 500,700;
-  --fontWeights-brands-secondary: 300,700;
+  --font-brands-primary: 'Knockout', sans-serif;
+  --font-brands-secondary: 'Caecilia LT Std', sans-serif;
+  --font-brands-tertiary: 'CaeciliaLTStd-Bold', var(--font-brands-secondary);
+  --fontWeights-brands-primary: 500, 700;
+  --fontWeights-brands-secondary: 300, 700;
   --fontWeights-brands-tertiary: 700;
+  /* Keep the below line since it's important for parsing */
+  --null: null;
 }
