@@ -52,7 +52,7 @@
   --font-brands-primary: 'UniformCond', sans-serif;
   --font-brands-secondary: var(--font-brands-primary);
   --font-brands-tertiary: var(--font-brands-primary);
-  --fontWeights-brands-primary: 400, 700, 900;
+  --fontWeights-brands-primary: 400, 700,900;
   --fontWeights-brands-secondary: 400, 700, 900;
   --fontWeights-brands-tertiary: 400, 700, 900;
   /* Keep the below line since it's important for parsing */

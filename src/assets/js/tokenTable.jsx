@@ -111,7 +111,7 @@ function TokenFontTable({ categoriesToInclude, fontWeights = [], isGlobal = fals
             const fontWeightKey = "fontWeights-brands-" + suffix;
 
             if (fontWeightTokens[fontWeightKey])
-              fontBrandWeights = fontWeightTokens[fontWeightKey].split(",");
+              fontBrandWeights = fontWeightTokens[fontWeightKey].split(",").map(item => item.trim());
 
             return (
               <tr key={tokenName}>
