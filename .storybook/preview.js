@@ -3,6 +3,9 @@ import { withThemeByDataAttribute } from '@storybook/addon-themes';
 import '/src/assets/css/tokens/globalTokens.css';
 import '/src/assets/css/tokens/fjrTokens.css';
 import '/src/assets/css/tokens/rrTokens.css';
+import '/src/assets/css/tokens/hanTokens.css';
+import '/src/assets/css/tokens/tieTokens.css';
+import '/src/assets/css/typeScale.scss';
 
 export const themeConfig = {
   themes: {

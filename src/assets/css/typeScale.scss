@@ -1,0 +1,52 @@
+$base-font-size: 16;
+$scale-factor: 1.23942;
+$type-scale-start: 1;
+$type-scale-end: 6;
+
+@function calculate-type-size($base-font-size, $scale-factor, $step) {
+  $font-size: $base-font-size * pow($scale-factor, $step);
+  @return round($font-size);
+}
+
+@mixin type-scale($base-font-size, $scale-factor, $start-step, $end-step) {
+  $steps: $end-step - $start-step + 1;
+
+  @for $i from 0 through $steps - 1 {
+    $step: $start-step + $i;
+    $reversed-step: $end-step - $i;
+    $font-size: calculate-type-size($base-font-size, $scale-factor, $step);
+
+    .type-#{$reversed-step} {
+      font-size: #{$font-size}px !important;
+      line-height: normal;
+    }
+  }
+
+  :root {
+    @for $i from 0 through $steps - 1 {
+      $step: $start-step + $i;
+      $reversed-step: $end-step - $i;
+      $font-size: calculate-type-size($base-font-size, $scale-factor, $step);
+
+      --font-size-#{$reversed-step}: #{$font-size}px;
+    }
+  }
+}
+
+@include type-scale($base-font-size, $scale-factor, $type-scale-start, $type-scale-end);
+
+.type-base {
+  font-size: #{$base-font-size}px;
+}
+
+.type-primary {
+  font-family: var(--font-primary, Arial, sans-serif) !important;
+}
+
+.type-secondary {
+  font-family: var(--font-secondary, Arial, sans-serif) !important;
+}
+
+.type-tertiary {
+  font-family: var(--font-tertiary, Arial, sans-serif) !important;
+}

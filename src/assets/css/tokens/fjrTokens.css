@@ -48,4 +48,11 @@
   --8-pt-numbers-16: 4.5rem;
   --8-pt-numbers-17: 5rem;
   --8-pt-numbers-full: 125rem;
+  /* fonts */
+  --font-brands-primary: Arctic Fox, sans-serif;
+  --font-brands-secondary: var(--font-brands-primary);
+  --font-brands-tertiary: hwt-artz, var(--font-brands-primary);
+  --fontWeights-brands-primary: 400,700,900;
+  --fontWeights-brands-secondary: 400,700,900;
+  --fontWeights-brands-tertiary: 700;
 }

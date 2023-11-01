@@ -1,51 +1,20 @@
 import { Meta, Typeset } from "@storybook/blocks";
+import { TokenFontTable, TokenTypeTable } from "/src/assets/js/tokenTable";
+import "/src/assets/js/themeSwitcher";
 
 <Meta title="Design Tokens/Typography" />
 
 # Typography
 
-**Font:** Nunito Sans
+Below is the list of **CSS variables** for fonts & their weights. Global font variables can be found [here](?path=/docs/design-tokens-global--docs#fonts).
 
-**Weights:** 400(regular), 700(bold), 800(extrabold), 900(black)
-
-<Typeset
-  fontSizes={[
-    Number(typography.size.s1) + 'px',
-    Number(typography.size.s2) + 'px',
-    Number(typography.size.s3) + 'px',
-    Number(typography.size.m1) + 'px',
-    Number(typography.size.m2) + 'px',
-    Number(typography.size.m3) + 'px',
-    Number(typography.size.l1) + 'px',
-    Number(typography.size.l2) + 'px',
-    Number(typography.size.l3) + 'px',
-  ]}
-  fontWeight={typography.weight.black}
-  sampleText={SampleText}
-  fontFamily={typography.type.primary}
+<TokenFontTable
+    categoriesToInclude={["font"]}
+    fontWeights={[300,400,500,700,900]}
+    isGlobal={true}
 />
 
-export const typography = {
-  type: {
-    primary: '"Nunito Sans", "Helvetica Neue", Helvetica, Arial, sans-serif',
-  },
-  weight: {
-    regular: '400',
-    bold: '700',
-    extrabold: '800',
-    black: '900',
-  },
-  size: {
-    s1: 12,
-    s2: 14,
-    s3: 16,
-    m1: 20,
-    m2: 24,
-    m3: 28,
-    l1: 32,
-    l2: 40,
-    l3: 48,
-  },
-};
-
-export const SampleText = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.';
+<TokenTypeTable
+    categoriesToInclude={["font"]}
+    isGlobal={true}
+/>

@@ -53,4 +53,8 @@
   --space-padding-mega: var(--8-pt-numbers-9, 2.5rem);
   --space-padding-giga: var(--8-pt-numbers-10, 2.75rem);
   --space-padding-tera: var(--8-pt-numbers-11, 3rem);
+  /* fonts */
+  --font-primary: var(--font-brands-primary, sans-serif);
+  --font-secondary: var(--font-brands-secondary, sans-serif);
+  --font-tertiary: var(--font-brands-tertiary, sans-serif);
 }

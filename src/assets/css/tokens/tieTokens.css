@@ -1,4 +1,4 @@
-[data-theme="RR"] {
+[data-theme="TIE"] {
   /* colors */
   --color-accents-blue: #235f83;
   --color-accents-green: #73ac3a;
@@ -6,11 +6,11 @@
   --color-accents-red: #e58586;
   --color-accents-red-light: #fae8e8;
   --color-accents-yellow: #eda64d;
-  --color-brands-primary-brand-color: #50776C;
-  --color-brands-primary-brand-darker-color: #46685e;
+  --color-brands-primary-brand-color: #54555A;
+  --color-brands-primary-brand-darker-color: #48494d;
   --color-brands-primary-brand-lighter-color: #e48881;
-  --color-brands-secondary-brand-color: #50776C;
-  --color-brands-secondary-brand-darker: #46685e;
+  --color-brands-secondary-brand-color: #54555A;
+  --color-brands-secondary-brand-darker: #48494d;
   --color-brands-secondary-brand-lighter: #b4c0a5;
   --color-grays-gray100: #f4f4f4;
   --color-grays-gray200: #ebebeb;
@@ -49,10 +49,10 @@
   --8-pt-numbers-17: 5rem;
   --8-pt-numbers-full: 125rem;
   /* fonts */
-  --font-brands-primary: "Trade Gothic LT", sans-serif;
+  --font-brands-primary: "UniformCond", sans-serif;
   --font-brands-secondary: var(--font-brands-primary);
   --font-brands-tertiary: var(--font-brands-primary);
-  --fontWeights-brands-primary: 400,700;
-  --fontWeights-brands-secondary: 400,700;
-  --fontWeights-brands-tertiary: 400,700;
+  --fontWeights-brands-primary: 400,700,900;
+  --fontWeights-brands-secondary: 400,700,900;
+  --fontWeights-brands-tertiary: 400,700,900;
 }
