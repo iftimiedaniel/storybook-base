@@ -5,7 +5,7 @@
     font-family: "Arctic Fox";
     font-style: normal;
     font-weight: 400;
-    src: url("/src/assets/fonts/ArcticFox/ArcticFox-Regular.woff2") format("woff2");
+    src: url("fonts/ArcticFox/ArcticFox-Regular.woff2") format("woff2");
     font-display: swap
 }
 
@@ -13,7 +13,7 @@
     font-family: "Arctic Fox";
     font-style: italic;
     font-weight: 400;
-    src: url("/src/assets/fonts/ArcticFox/ArcticFox-Italic.woff2") format("woff2");
+    src: url("fonts/ArcticFox/ArcticFox-Italic.woff2") format("woff2");
     font-display: swap
 }
 
@@ -21,7 +21,7 @@
     font-family: "Arctic Fox";
     font-style: normal;
     font-weight: 700;
-    src: url("/src/assets/fonts/ArcticFox/ArcticFox-Bold.woff2") format("woff2");
+    src: url("fonts/ArcticFox/ArcticFox-Bold.woff2") format("woff2");
     font-display: swap;
 }
 
@@ -29,7 +29,7 @@
     font-family: "Arctic Fox";
     font-style: normal;
     font-weight: 900;
-    src: url("/src/assets/fonts/ArcticFox/ArcticFox-Headline.woff2") format("woff2");
+    src: url("fonts/ArcticFox/ArcticFox-Headline.woff2") format("woff2");
     font-display: swap
 }
 
@@ -44,13 +44,13 @@
 @font-face {
     font-family: "Trade Gothic LT";
     font-weight: 700;
-    src: url("/src/assets/fonts/TradeGhoticLT/TradeGhoticLTBold.woff2") format("woff2");
+    src: url("fonts/TradeGhoticLT/TradeGhoticLTBold.woff2") format("woff2");
 }
 
 @font-face {
     font-family: "Trade Gothic LT";
     font-weight: 400;
-    src: url("/src/assets/fonts/TradeGhoticLT/TradeGhoticLT.woff2") format("woff2");
+    src: url("fonts/TradeGhoticLT/TradeGhoticLT.woff2") format("woff2");
 }
 
 /* Hanwag */
@@ -59,12 +59,12 @@
     font-weight: 300;
     font-style: normal;
     font-display: swap;
-    src: url("/src/assets/fonts/CaecilliaTStd/CaeciliaLTStd-Light.woff2") format("woff2");
+    src: url("fonts/CaecilliaTStd/CaeciliaLTStd-Light.woff2") format("woff2");
 }
 
 @font-face {
     font-family: "CaeciliaLTStd-Bold";
-    src: url("/src/assets/fonts/CaecilliaTStd/CaeciliaLTStd-Bold.woff2") format("woff2");
+    src: url("fonts/CaecilliaTStd/CaeciliaLTStd-Bold.woff2") format("woff2");
     font-weight: normal;
     font-style: normal;
     font-display: swap;
@@ -75,7 +75,7 @@
     font-weight: 500;
     font-style: normal;
     font-display: swap;
-    src: url("/src/assets/fonts/Knockout-HTF50-Welterweight/Knockout-HTF50-Welterweight.woff2") format("woff2")
+    src: url("fonts/Knockout-HTF50-Welterweight/Knockout-HTF50-Welterweight.woff2") format("woff2")
 }
 
 /* Tierra */
@@ -83,7 +83,7 @@
     font-family: "UniformCond";
     font-style: normal;
     font-weight: 400;
-    src: url("/src/assets/fonts/UniformCond/UniformCond.woff2") format("woff2");
+    src: url("fonts/UniformCond/UniformCond.woff2") format("woff2");
     font-display: swap;
 }
 
@@ -91,7 +91,7 @@
     font-family: "UniformCond";
     font-style: normal;
     font-weight: 700;
-    src: url("/src/assets/fonts/UniformCond/UniformCondBold.woff2") format("woff2");
+    src: url("fonts/UniformCond/UniformCondBold.woff2") format("woff2");
     font-display: swap;
 }
 
@@ -99,6 +99,6 @@
     font-family: "UniformCond";
     font-style: normal;
     font-weight: 900;
-    src: url("/src/assets/fonts/UniformCond/UniformCondBlack.woff2") format("woff2");
+    src: url("fonts/UniformCond/UniformCondBlack.woff2") format("woff2");
     font-display: fallback;
 }
