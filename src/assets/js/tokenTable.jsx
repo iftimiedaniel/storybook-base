@@ -128,15 +128,14 @@ function TokenFontTable({ categoriesToInclude, fontWeights = [], isGlobal = fals
                 ))}
               </tr>
             );
-          }
-          )}
+          })}
         </tbody>
       </table>
     </div>
   );
 }
 
-function uuidv4() {
+function guid() {
   return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'
     .replace(/[xy]/g, function (c) {
       const r = Math.random() * 16 | 0,
@@ -152,7 +151,7 @@ function TokenTypeTable({ categoriesToInclude, isGlobal = false }) {
   const fontWeightTokens = filterCategories(parsedBrandTokens, ["fontWeights"]);
   let fontBrandWeights = [];
   let fontFamilies = [];
-  let myKey = uuidv4();
+  let myKey = guid();
   const tokenElements = Object.keys(filteredTokens).map((tokenName) => {
     const suffix = tokenName.split("-").pop();
     const fontWeightKey = "fontWeights-brands-" + suffix;
@@ -207,7 +206,7 @@ function TokenTypeTable({ categoriesToInclude, isGlobal = false }) {
                                 }
 
                                 if (familyElement) {
-                                  familyElement.textContent = `${fontFamily}`;
+                                  familyElement.textContent = capitalizeFirstLetter(fontFamily);
 
                                   if (fontFamilies.indexOf(fontFamily) === -1) {
                                     fontFamilies.push(fontFamily);
