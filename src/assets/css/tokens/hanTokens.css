@@ -55,6 +55,4 @@
   --fontWeights-brands-primary: 500, 700;
   --fontWeights-brands-secondary: 300, 700;
   --fontWeights-brands-tertiary: 700;
-  /* Keep the below line since it's important for parsing */
-  --null: null;
 }

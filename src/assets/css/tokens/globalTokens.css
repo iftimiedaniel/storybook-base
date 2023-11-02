@@ -57,7 +57,4 @@
   --font-primary: var(--font-brands-primary, sans-serif);
   --font-secondary: var(--font-brands-secondary, sans-serif);
   --font-tertiary: var(--font-brands-tertiary, sans-serif);
-  /* end of varialbes */
-  /* Keep the below line since it's important for parsing */
-  --null: null;
 }
