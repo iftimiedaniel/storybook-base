@@ -14,10 +14,17 @@
 	font-family: var(--font-primary);
 	transition: .2s ease;
 	transition-property: background-color, color;
+	min-height: 40px;
 
 	[data-theme="FJR"] &,
 	[data-theme="RR"] & {
 		font-weight: 700;
+	}
+
+	&:disabled,
+	&--disabled {
+		color: var(--color-text-text-disabled-color, #CCC);
+		cursor: not-allowed;
 	}
 
 	&--primary {
@@ -26,7 +33,11 @@
 
 		&:hover,
 		&.fx-button--hover {
-			background: var(--color-interface-button-primary-button-hover-color, #262626);
+
+			&:not(:disabled),
+			&:not(.fx-button--disabled) {
+				background: var(--color-interface-button-primary-button-hover-color, #262626);
+			}
 		}
 
 		&:disabled,
@@ -41,7 +52,11 @@
 
 		&:hover,
 		&.fx-button--hover {
-			background: var(--color-interface-button-secondary-button-hover-color, #5B694A);
+
+			&:not(:disabled),
+			&:not(.fx-button--disabled) {
+				background: var(--color-interface-button-secondary-button-hover-color, #5B694A);
+			}
 		}
 
 		&:disabled,
@@ -56,8 +71,12 @@
 
 		&:hover,
 		&.fx-button--hover {
-			color: var(--color-interface-primary-active-color, #B93228);
-			background: var(--color-grays-gray-100, #F4F4F4);
+
+			&:not(:disabled),
+			&:not(.fx-button--disabled) {
+				color: var(--color-interface-primary-active-color, #B93228);
+				background: var(--color-grays-gray-100, #F4F4F4);
+			}
 		}
 
 		&:disabled,
@@ -72,8 +91,12 @@
 
 		&:hover,
 		&.fx-button--hover {
-			color: var(--color-interface-primary-active-color, #B93228);
-			outline: 1px solid var(--color-interface-border-border-hovercolor, #999);
+
+			&:not(:disabled),
+			&:not(.fx-button--disabled) {
+				color: var(--color-interface-primary-active-color, #B93228);
+				outline: 1px solid var(--color-interface-border-border-hovercolor, #999);
+			}
 		}
 
 		&:disabled,
@@ -88,7 +111,11 @@
 
 		&:hover,
 		&.fx-button--hover {
-			color: var(--color-interface-primary-active-color, #B93228);
+
+			&:not(:disabled),
+			&:not(.fx-button--disabled) {
+				color: var(--color-interface-primary-active-color, #B93228);
+			}
 		}
 
 		&.fx-button {
@@ -117,10 +144,5 @@
 			width: var(--space-padding-xxl, 24px);
 			height: var(--space-padding-xxl, 24px);
 		}
-	}
-
-	&:disabled,
-	&--disabled {
-		color: var(--color-text-text-disabled-color, #CCC);
 	}
 }

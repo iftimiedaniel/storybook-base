@@ -1,23 +1,29 @@
-import { Meta, Canvas, Controls, Description } from '@storybook/blocks';
+import { Title, Meta, Controls, Description } from '@storybook/blocks';
 import * as ButtonStories from './Button.stories';
 import ButtonCss from './button.scss?inline';
+import ButtonScss from './button.scss?raw';
+import CanvasCodeToggle from '/src/assets/js/canvasCodeToggle';
 
 <Meta of={ButtonStories} />
 
-# Button
+<Title />
 
 <Description />
 
-<Canvas 
-    of={ButtonStories.Primary} 
-    sourceState="hidden" 
-    withToolbar="true" 
-    source={{
-        code: ButtonCss,
-        language: 'css',
-        dark: true
-    }} 
-/>
+<CanvasCodeToggle codes={[
+  { 
+    buttonTitle: "Toggle CSS", 
+    codeTitle: "CSS",
+    code: ButtonCss, 
+    blockId: "button-css-code" 
+  }, 
+  { 
+    buttonTitle: "Toggle SCSS", 
+    codeTitle: "SCSS",
+    code: ButtonScss, 
+    blockId: "button-scss-code" 
+  }
+]} />
 
 ### Options
 
